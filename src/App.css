@@ -1,32 +1,95 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+text-align: center;
+background-color: #87CEFA;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pageheading {
+  color:	#00FFFF;
+}
+
+.flex-container {
+  font-family: sans-serif;
+  text-align : center;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+
+.flex-container > div {
+  margin: 10px;
+  padding: 20px;
+  width: 30%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-1 {
+  font-size: 25px;
+  margin:  20px 0;
 }
+
+.text-2 {
+  margin:  20px 0;
+}
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  width: 100%;
+}
+
+input[type=button] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #ffffff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #00BFFF; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.autocompleteCheckbox {
+  text-align: left;
+}
+
+.autocompleteCheckbox input[type=checkbox] {
+  margin: 10px;
+}
+
