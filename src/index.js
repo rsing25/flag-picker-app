@@ -6,7 +6,6 @@ import ReduxPromise from 'redux-promise';
 import App from './components/App';
 import reducers from './reducers';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -15,3 +14,4 @@ ReactDOM.render(
     <App />
   </Provider>
   , document.getElementById('root'));
+

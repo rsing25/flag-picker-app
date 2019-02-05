@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AutoSuggest from "./autosuggest";
 import  ContinentList  from "../containers/continent-list";
 import CountryList from "../containers/country-list";
 import FlagDetail from "../containers/flag-detail";
@@ -24,4 +23,3 @@ export default class App extends Component {
 		);
 	}
 }
-

@@ -31,7 +31,7 @@ export default class Autosuggest extends Component {
     onListItemUpdate(arrVal,e) {
         this.setState({autoIn: arrVal, showMenu: true});
         if(this.props.data.indexOf(arrVal) !== -1) {
-            if(this.props.type == "checkbox") {
+            if(this.props.type === "checkbox") {
                 this.setState({autoIn: ""});
                 this.props.onChange(arrVal,e.target.checked);
             } else {
@@ -42,7 +42,6 @@ export default class Autosuggest extends Component {
     }
     
     renderList() {
-        const autoIn = this.state.autoIn;
         const showMenu = this.state.showMenu;
         if(!showMenu) {
             return (<div></div>);
@@ -53,16 +52,16 @@ export default class Autosuggest extends Component {
     returnMenuItem() {
         const autoIn = this.state.autoIn;
         const filterdArr = this.props.data.filter( (arrVal, index) => {
-            return arrVal.substr(0,  autoIn.length).toUpperCase() == autoIn.toUpperCase();
+            return arrVal.substr(0,  autoIn.length).toUpperCase() === autoIn.toUpperCase();
         });
         return filterdArr.map( (arrVal, index) => {
-            if(this.props.type == "checkbox" && this.props.checkeddata.indexOf(arrVal) !== -1 ) {
+            if(this.props.type === "checkbox" && this.props.checkeddata.indexOf(arrVal) !== -1 ) {
                 return (<div  key= {index} className="autocompleteCheckbox" >
                             <input  type= "checkbox"
                                 onClick = {this.onListItemUpdate.bind(this,arrVal)}  checked>
                             </input>{arrVal}
                         </div>);
-            } else if(this.props.type == "checkbox" && this.props.checkeddata.indexOf(arrVal) === -1 ) {
+            } else if(this.props.type === "checkbox" && this.props.checkeddata.indexOf(arrVal) === -1 ) {
                 return (<div  key= {index} className="autocompleteCheckbox" >
                             <input  type= "checkbox" 
                                 onClick = {this.onListItemUpdate.bind(this,arrVal)}  >
@@ -73,7 +72,6 @@ export default class Autosuggest extends Component {
             }
         });  
     }
-
     
     render() {
         return(

@@ -1,4 +1,3 @@
-
 export const selectContinent = continent => {
 	return {
 		type: "CONTINENT_SELECTED",

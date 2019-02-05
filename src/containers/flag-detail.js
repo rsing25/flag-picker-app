@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { clearConuntry } from "../actions/index";
-import AutoSuggest from "../components/autosuggest";
 
 class FlagDetail extends Component {
 
@@ -44,7 +43,7 @@ class FlagDetail extends Component {
 
     renderFlags(flags) {
         return flags.map((flag)=> {
-            return (<span>{flag}</span>);
+            return (<span key={flag}>{flag}</span>);
         });
     }
 
@@ -69,4 +68,3 @@ export const mapDispatchToProps = dispatch => {
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(FlagDetail);
-
